@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "./bug-trackr-backend/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "./bug-trackr/build",
+      "use": "@vercel/static"
+    }
+  ],
+
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/bug-trackr-backend/server.js"
+    }
+  ]
+}
